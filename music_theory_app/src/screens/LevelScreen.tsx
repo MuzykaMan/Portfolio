@@ -1,6 +1,8 @@
 import { View, FlatList, Text, TextInput } from "react-native"
 import Level from "../models/Level"
 import TitleCell from "../components/TitleCell"
+import PageGreeting from "../components/Greeting"
+
 
 const levels: Level[] = [
   {
@@ -58,6 +60,7 @@ function LevelScreen() {
 
   return (
     <View>
+      <PageGreeting greeting={"Welcome to my Music Theory App!"} />
       <FlatList
         data={levels}
         renderItem={({ item }) => <TitleCell title={item.title} />} />
