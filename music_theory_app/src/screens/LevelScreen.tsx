@@ -60,7 +60,7 @@ function LevelScreen() {
 
   return (
     <View>
-      <PageGreeting greeting={"Welcome to my Music Theory App!"} />
+      <PageGreeting greeting={"Welcome to my Music Theory App!"} description={"This was something I wanted to put together for my students"} hasLogo={"https://t4.ftcdn.net/jpg/02/90/67/89/240_F_290678974_AObFgMRPhgffKaXDxykn1y4IXTGB8n68.jpg"} />
       <FlatList
         data={levels}
         renderItem={({ item }) => <TitleCell title={item.title} />} />
