@@ -6,7 +6,12 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: 'black',
         textAlign: 'center',
-        flexGrow: 1,
+        // flexGrow: 1,
+    },
+    description: {
+        fontSize: 12,
+        color: 'black',
+
     },
     container: {
         height: 100,
@@ -28,14 +33,18 @@ const styles = StyleSheet.create({
 interface TitleCellProps {
     title: string;
     image?: string;
+    description?: string;
 }
 
 function TitleCell(props: TitleCellProps) {
     return (
         <View style={styles.container}>
-            {props.image && (<Image source={{ uri: props.image }} style={styles.image} />) }
-            <Text style={styles.title}>{props.title}</Text>
-            {props.image && (<View style={{width: 75, height: 75, marginRight: 8}} />) }
+            {props.image && (<Image source={{ uri: props.image }} style={styles.image} />)}
+            <View>
+                <Text style={styles.title}>{props.title}</Text>
+                <Text style={styles.description}>{props.description}</Text>
+            </View>
+            {props.image && (<View style={{ width: 75, height: 75, marginRight: 8 }} />)}
         </View>
     )
 }

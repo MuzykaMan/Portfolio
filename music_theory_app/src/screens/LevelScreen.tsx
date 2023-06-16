@@ -6,9 +6,10 @@ import PageGreeting from "../components/Greeting"
 
 const levels: Level[] = [
   {
-    title: 'Level 1',
+    title: 'Level One Review',
     concepts: [],
-    image: "https://yt3.googleusercontent.com/ytc/AGIKgqPKW39_T9HR-37_mLfl_rGv9vOir0BeAu7-rp4b8A=s176-c-k-c0x00ffffff-no-rj"
+    image: "https://yt3.googleusercontent.com/ytc/AGIKgqPKW39_T9HR-37_mLfl_rGv9vOir0BeAu7-rp4b8A=s176-c-k-c0x00ffffff-no-rj",
+    description: 'In this level we will review...'
   },
   {
     title: 'Level 2',
@@ -65,7 +66,7 @@ function LevelScreen() {
       <View>
         <FlatList
           data={levels}
-          renderItem={({ item }) => <TitleCell title={item.title} image={item.image} />} />
+          renderItem={({ item }) => <TitleCell title={item.title} image={item.image} description={item.description} />} />
       </View>
     </View>
   )
