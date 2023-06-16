@@ -7,7 +7,8 @@ import PageGreeting from "../components/Greeting"
 const levels: Level[] = [
   {
     title: 'Level 1',
-    concepts: []
+    concepts: [],
+    image: "https://yt3.googleusercontent.com/ytc/AGIKgqPKW39_T9HR-37_mLfl_rGv9vOir0BeAu7-rp4b8A=s176-c-k-c0x00ffffff-no-rj"
   },
   {
     title: 'Level 2',
@@ -61,9 +62,11 @@ function LevelScreen() {
   return (
     <View>
       <PageGreeting greeting={"Welcome to my Music Theory App!"} description={"This was something I wanted to put together for my students"} hasLogo={"https://t4.ftcdn.net/jpg/02/90/67/89/240_F_290678974_AObFgMRPhgffKaXDxykn1y4IXTGB8n68.jpg"} />
-      <FlatList
-        data={levels}
-        renderItem={({ item }) => <TitleCell title={item.title} />} />
+      <View>
+        <FlatList
+          data={levels}
+          renderItem={({ item }) => <TitleCell title={item.title} image={item.image} />} />
+      </View>
     </View>
   )
 }
