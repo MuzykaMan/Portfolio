@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import Level from './src/models/Level';
 import LevelScreen from './src/screens/LevelScreen';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 
@@ -22,12 +23,14 @@ import LevelScreen from './src/screens/LevelScreen';
 function App(): JSX.Element {
 
   return (
-    <SafeAreaView>
-      <StatusBar />
-      <View>
-        <LevelScreen></LevelScreen>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView>
+        <StatusBar />
+        <View>
+          <LevelScreen></LevelScreen>
+        </View>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
