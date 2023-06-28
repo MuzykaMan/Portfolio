@@ -14,11 +14,15 @@ import {
   FlatList,
 } from 'react-native';
 import LevelScreen from './src/screens/LevelScreen';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, ParamListBase } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ConceptScreen from './src/screens/ConceptScreen';
 
-const Stack = createNativeStackNavigator();
+export interface RootStackParamList extends ParamListBase {
+  Level: undefined;
+  Concept: {levelId: number};
+}
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App(): JSX.Element {
 

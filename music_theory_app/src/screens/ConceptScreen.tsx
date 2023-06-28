@@ -16,6 +16,9 @@ const concepts: Concept[] = [
 ]
 
 function ConceptScreen() {
+    //1. get param which level id was selected
+    //2. grab based on level id the concepts array that belongs to that level
+    //3. update useState to modify array that needs to be displayed
     return (
         <View>
             <PageGreeting greeting={"Welcome to my Music Theory App!"} description={"This was something I wanted to put together for my students"} hasLogo={"https://t4.ftcdn.net/jpg/02/90/67/89/240_F_290678974_AObFgMRPhgffKaXDxykn1y4IXTGB8n68.jpg"} />
