@@ -17,10 +17,12 @@ import LevelScreen from './src/screens/LevelScreen';
 import { NavigationContainer, ParamListBase } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ConceptScreen from './src/screens/ConceptScreen';
+import ContentScreen from './src/screens/ContentScreen';
 
 export interface RootStackParamList extends ParamListBase {
   Level: undefined;
   Concept: {levelId: number};
+  Content: {content: string};
 }
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -31,6 +33,7 @@ function App(): JSX.Element {
       <Stack.Navigator initialRouteName='Level'>
         <Stack.Screen name="Level" component={LevelScreen} />
         <Stack.Screen name="Concept" component={ConceptScreen} />
+        <Stack.Screen name="Content" component={ContentScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

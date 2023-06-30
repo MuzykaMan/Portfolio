@@ -89,7 +89,10 @@ function LevelScreen(props: Props) {
   const [levelId, setLevelId] = useState<number | undefined>(undefined)
 
   useEffect(() => {
-    props.navigation.navigate('Concept', { levelId: levelId ?? 0 });
+    if (levelId) {
+      console.log('hello world')
+      props.navigation.navigate('Concept', { levelId: levelId ?? 0 });
+    }
   }, [levelId])
   return (
     <View>

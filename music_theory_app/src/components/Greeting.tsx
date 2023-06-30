@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 function PageGreeting(props: PageGreetingProps) {
     return (
         <View>
-            <Image style={styles.hasLogo} source={ {uri: "https://t4.ftcdn.net/jpg/02/90/67/89/240_F_290678974_AObFgMRPhgffKaXDxykn1y4IXTGB8n68.jpg"}}/>
+            <Image style={styles.hasLogo} source={ {uri: props.hasLogo}}/>
             <Text style={styles.greeting}>{props.greeting}</Text>
             <Text style={styles.description}>{props.description}</Text>
         </View>
