@@ -35,9 +35,11 @@ const styles = StyleSheet.create({
 })
 
 interface TitleCellProps {
-    title: string;
+    title?: string;
     image?: string;
     description?: string;
+    questions?: string;
+    answers?: boolean
 }
 
 function TitleCell(props: TitleCellProps) {
