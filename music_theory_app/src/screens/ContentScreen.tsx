@@ -22,7 +22,7 @@ function ContentScreen(props: Props) {
     const [contentTest, setContentTest] = useState<string | undefined>(undefined)
     useEffect(() => {
         if (contentTest) {
-            props.navigation.navigate("Test", { testLink: contentTest })
+            props.navigation.navigate("Test", { contentTest: contentTest })
         }
     }, [contentTest])
     return (

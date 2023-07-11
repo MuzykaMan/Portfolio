@@ -24,7 +24,7 @@ export interface RootStackParamList extends ParamListBase {
   Level: undefined;
   Concept: {levelId: number};
   Content: {content: string};
-  Test: {testLink: string}
+  Test: {contentTest: string}
 }
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
