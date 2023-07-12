@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Text, StyleSheet, Image } from "react-native"
+import { View, Text, StyleSheet, Image, Pressable } from "react-native"
 import PageGreeting from "./Greeting";
 
 const styles = StyleSheet.create({
@@ -35,22 +35,27 @@ const styles = StyleSheet.create({
 })
 
 interface TitleCellProps {
-    title?: string;
+    title: string;
     image?: string;
     description?: string;
-    questions?: string;
-    answers?: boolean
+    onPress?: () => void;
+}
+
+const bla: () => void = function Thing() {
+    console.log('Thing')
 }
 
 function TitleCell(props: TitleCellProps) {
     return (
-        <View style={styles.container}>
-            {props.image && (<Image source={{ uri: props.image }} style={styles.image} />)}
-            <View style={styles.textContainer}>
-                <Text style={styles.title} ellipsizeMode="tail">{props.title}</Text>
-                <Text style={styles.description} ellipsizeMode="tail">{props.description}</Text>
+        <Pressable onPress={props.onPress}>
+            <View style={styles.container}>
+                {props.image && (<Image source={{ uri: props.image }} style={styles.image} />)}
+                <View style={styles.textContainer}>
+                    <Text style={styles.title} ellipsizeMode="tail">{props.title}</Text>
+                    <Text style={styles.description} ellipsizeMode="tail">{props.description}</Text>
+                </View>
             </View>
-        </View>
+        </Pressable>
     )
 }
 

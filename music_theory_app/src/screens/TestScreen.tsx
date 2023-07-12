@@ -20,7 +20,7 @@ function TestScreen() {
                 data={test}
                 renderItem={({ item }) => {
                     return (
-                        <TitleCell questions={item.questions} answers={item.answers} />
+                        <TitleCell title={item.questions} description={item.answers.toString()} />
                     )
                 }} />
         </View>

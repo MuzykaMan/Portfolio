@@ -27,6 +27,7 @@ function ConceptScreen(props: Props) {
     const [conceptContent, setConceptContent] = useState<string | undefined>(undefined)
     useEffect(() => {
         if (conceptContent) {
+            setConceptContent(undefined)
             props.navigation.navigate("Content", { content: conceptContent })
         }
     }, [conceptContent])
@@ -38,11 +39,12 @@ function ConceptScreen(props: Props) {
                     data={concepts}
                     renderItem={({ item }) => {
                         return (
-                            <Pressable onPress={() => {
-                                setConceptContent(item.content)
-                            }}>
-                                <TitleCell title={item.title} description={item.content} />
-                            </Pressable>)
+                            <TitleCell title={item.title}
+                                description={item.content}
+                                onPress={() => {
+                                    setConceptContent(item.content)
+                                }} />
+                        )
                     }
                     } />
             </View>

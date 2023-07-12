@@ -90,7 +90,7 @@ function LevelScreen(props: Props) {
 
   useEffect(() => {
     if (levelId) {
-      console.log('hello world')
+      setLevelId(undefined)
       props.navigation.navigate('Concept', { levelId: levelId ?? 0 });
     }
   }, [levelId])
@@ -102,12 +102,12 @@ function LevelScreen(props: Props) {
           data={levels}
           renderItem={({ item }) => {
             return (
-              <Pressable onPress={() => {
-                console.log("Hello world", item.id)
-                setLevelId(item.id)
-              }}>
-                <TitleCell title={item.title} image={item.image} description={item.description} />
-              </Pressable>
+              <TitleCell title={item.title}
+                image={item.image}
+                description={item.description}
+                onPress={() => {
+                  setLevelId(item.id)
+                }} />
             )
           }} />
       </View>
