@@ -3,23 +3,21 @@ import { FlatList, Pressable, Text, View } from "react-native";
 import { RootStackParamList } from "../../App";
 import { useEffect, useState } from "react";
 import PageGreeting from "../components/Greeting";
-import Content from "../models/Content";
+import Content from "../components/Content";
 import TitleCell from "../components/TitleCell";
+import DisplayContent from "../components/Content";
 
-const contents: Content[] = [
+const contents = [
     {
-        information: 'Something interesting and helpful about music theory',
-        testLink: 'click here for test'
-    },
-    {
-        information: 'Something else interesting and helpful about music theory',
-        testLink: 'click here for test'
+        title: 'Something interesting and helpful about music theory',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     }
 ]
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Content'>
 
 function ContentScreen(props: Props) {
+
     const [contentTest, setContentTest] = useState<string | undefined>(undefined)
     useEffect(() => {
         if (contentTest) {
@@ -28,21 +26,15 @@ function ContentScreen(props: Props) {
         }
     }, [contentTest])
     return (
+
         <View>
-            <PageGreeting greeting={"Welcome to my Music Theory App!"} description={"This was something I wanted to put together for my students"} hasLogo={"https://t4.ftcdn.net/jpg/02/90/67/89/240_F_290678974_AObFgMRPhgffKaXDxykn1y4IXTGB8n68.jpg"} />
-            <View>
-                {/* <FlatList
-                    data={contents}
-                    renderItem={({ item }) => {
-                        return (
-                            <TitleCell title={item.information}
-                                description={item.testLink}
-                                onPress={() => {
-                                    setContentTest(item.testLink)
-                                }} />
-                        )
-                    }} /> */}
-            </View>
+            <FlatList
+                data={contents}
+                renderItem={({ item }) => {
+                    return (
+                        <DisplayContent title={item.title} content={item.content} />
+                    )
+                }} />
         </View>
     )
 }

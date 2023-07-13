@@ -41,10 +41,6 @@ interface TitleCellProps {
     onPress?: () => void;
 }
 
-const bla: () => void = function Thing() {
-    console.log('Thing')
-}
-
 function TitleCell(props: TitleCellProps) {
     return (
         <Pressable onPress={props.onPress}>
